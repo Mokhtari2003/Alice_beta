@@ -1,0 +1,19 @@
+body {
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+.navbar {
+    margin-bottom: 20px;
+}
+.dark-mode {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+.nav-link{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+}
+#username {
+    text-align: center;
+}
