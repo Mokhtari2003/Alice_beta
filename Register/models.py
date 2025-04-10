@@ -53,7 +53,7 @@ class UserAccount(AbstractBaseUser):
     )
     AC = models.BigIntegerField(default=10)
     Date_Joined=models.DateField(default=django.utils.timezone.now())
-    Ref_Code = models.CharField(default=Ref_Code_generator() ,max_length=6)
+    Ref_Code = models.CharField(default=Ref_Code_generator(length=10) ,max_length=10)
     
     is_RevardClaimed = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
