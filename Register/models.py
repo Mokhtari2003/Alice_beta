@@ -21,7 +21,7 @@ class CustomUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, username, email, phone_number, password=None ,AC=10 ,Date_Joined = django.utils.timezone.now() ,Ref_Code=Ref_Code_generator()):
+    def create_superuser(self, username, email, phone_number, password=None ,AC=10 ,Date_Joined = django.utils.timezone.now() ,Ref_Code=Ref_Code_generator(length=10)):
         user = self.create_user(
             username=username,
             email=email,
@@ -53,7 +53,7 @@ class UserAccount(AbstractBaseUser):
     )
     AC = models.BigIntegerField(default=10)
     Date_Joined=models.DateField(default=django.utils.timezone.now())
-    Ref_Code = models.CharField(default=Ref_Code_generator(length=10) ,max_length=10)
+    Ref_Code = models.CharField(default=Ref_Code_generator(10) ,max_length=10)
     
     is_RevardClaimed = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
